@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinity Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-white to-gray-50 text-gray-900">
+
+  <!-- Header -->
+  <header class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold">
+        IS
+      </div>
+      <div>
+        <h1 class="text-lg font-semibold">Infinity Studio</h1>
+        <p class="text-xs text-gray-500">Design & Desenvolvimento</p>
+      </div>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a class="hover:underline" href="#features">Serviços</a>
+      <a class="hover:underline" href="#portfolio">Portfólio</a>
+      <a class="hover:underline" href="#pricing">Preços</a>
+      <a class="hover:underline" href="#contact">Contato</a>
+    </nav>
+
+    <div class="md:hidden">
+      <button class="p-2 rounded-md border">Menu</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-16">
+    <div>
+      <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
+        Identidade visual que conecta a sua marca com pessoas.
+      </h2>
+      <p class="mt-4 text-gray-600 max-w-xl">
+        Criamos logos, sites, e experiências digitais que aumentam a credibilidade da sua marca e convertem visitantes em clientes.
+      </p>
+
+      <div class="mt-6 flex gap-4">
+        <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl shadow-md bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold">Contratar</a>
+        <a href="#portfolio" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-gray-200 text-sm">Ver portfólio</a>
+      </div>
+
+      <div class="mt-8 grid grid-cols-3 gap-4 text-xs text-gray-500">
+        <div class="bg-white p-3 rounded-xl shadow-sm text-center">
+          <div class="font-bold">+50</div>
+          <div>Projetos</div>
+        </div>
+        <div class="bg-white p-3 rounded-xl shadow-sm text-center">
+          <div class="font-bold">10+</div>
+          <div>Clientes ativos</div>
+        </div>
+        <div class="bg-white p-3 rounded-xl shadow-sm text-center">
+          <div class="font-bold">100%</div>
+          <div>Satisfação</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-first md:order-last">
+      <div class="relative bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-6 shadow-2xl">
+        <div class="rounded-xl bg-white p-4 shadow-inner">
+          <div class="h-40 rounded-lg bg-gradient-to-r from-blue-200 to-purple-200 flex items-center justify-center text-sm text-gray-600">Preview do projeto</div>
+          <div class="mt-4 grid grid-cols-2 gap-3">
+            <div class="h-16 rounded-md bg-gray-100 flex items-center justify-center text-xs">Logo</div>
+            <div class="h-16 rounded-md bg-gray-100 flex items-center justify-center text-xs">Cartão</div>
+            <div class="h-16 rounded-md bg-gray-100 flex items-center justify-center text-xs">Post</div>
+            <div class="h-16 rounded-md bg-gray-100 flex items-center justify-center text-xs">Capa</div>
+          </div>
+        </div>
+        <div class="absolute -bottom-6 left-6 bg-white p-3 rounded-2xl shadow">Preço a partir de <strong>R$ 499</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="features" class="max-w-6xl mx-auto px-6 py-12">
+    <h3 class="text-2xl font-bold">O que fazemos</h3>
+    <p class="text-gray-600 mt-2 max-w-2xl">Branding, sites, design para redes sociais, e suporte contínuo para escalar sua comunicação.</p>
+
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 bg-white rounded-2xl shadow-sm">
+        <h4 class="font-semibold">Identidade Visual</h4>
+        <p class="mt-2 text-sm text-gray-600">Logo, paleta de cores, tipografia e guia de aplicação.</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow-sm">
+        <h4 class="font-semibold">Websites</h4>
+        <p class="mt-2 text-sm text-gray-600">Landing pages, sites institucionais e lojas simples com foco em conversão.</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow-sm">
+        <h4 class="font-semibold">Conteúdo para redes</h4>
+        <p class="mt-2 text-sm text-gray-600">Posts, capas e templates fáceis de editar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="max-w-6xl mx-auto px-6 py-12 bg-white rounded-t-3xl">
+    <h3 class="text-2xl font-bold">Portfólio</h3>
+    <p class="text-gray-600 mt-2">Alguns trabalhos recentes (placeholders).</p>
+
+    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="rounded-2xl overflow-hidden shadow">
+        <div class="h-40 bg-gradient-to-r from-purple-300 to-pink-300 flex items-center justify-center text-white font-bold">Projeto 1</div>
+        <div class="p-4 bg-white">
+          <div class="font-semibold">Projeto 1</div>
+          <div class="text-xs text-gray-500 mt-1">Branding • Web • Post</div>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow">
+        <div class="h-40 bg-gradient-to-r from-purple-300 to-pink-300 flex items-center justify-center text-white font-bold">Projeto 2</div>
+        <div class="p-4 bg-white">
+          <div class="font-semibold">Projeto 2</div>
+          <div class="text-xs text-gray-500 mt-1">Branding • Web • Post</div>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow">
+        <div class="h-40 bg-gradient-to-r from-purple-300 to-pink-300 flex items-center justify-center text-white font-bold">Projeto 3</div>
+        <div class="p-4 bg-white">
+          <div class="font-semibold">Projeto 3</div>
+          <div class="text-xs text-gray-500 mt-1">Branding • Web • Post</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="max-w-6xl mx-auto px-6 py-12">
+    <h3 class="text-2xl font-bold">Pacotes</h3>
+    <p class="text-gray-600 mt-2">Pacotes pensados para freelancers, pequenas empresas e lojas.</p>
+
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 bg-white rounded-2xl shadow-sm">
+        <div class="font-semibold">Starter</div>
+        <div class="mt-2 text-gray-600 text-sm">R$ 499 — Logo simples + 3 posts</div>
+        <button class="mt-4 w-full py-2 rounded-xl border">Escolher</button>
+      </div>
+
+      <div class="p-6 bg-gradient-to-br from-purple-600 to-pink-500 text-white rounded-2xl shadow-lg">
+        <div class="font-semibold">Pro</div>
+        <div class="mt-2 text-sm">R$ 1.499 — Identidade + site landing</div>
+        <button class="mt-4 w-full py-2 rounded-xl bg-white text-purple-600 font-semibold">Escolher</button>
+      </div>
+
+      <div class="p-6 bg-white rounded-2xl shadow-sm">
+        <div class="font-semibold">Premium</div>
+        <div class="mt-2 text-gray-600 text-sm">R$ 3.499 — Marca completa + suporte</div>
+        <button class="mt-4 w-full py-2 rounded-xl border">Escolher</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <footer id="contact" class="max-w-6xl mx-auto px-6 py-12">
+    <div class="bg-white rounded-2xl shadow p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-xl font-bold">Vamos conversar?</h4>
+        <p class="text-gray-600 mt-2">Me mande uma mensagem com seu projeto, orçamento e prazo.</p>
+
+        <ul class="mt-4 text-sm text-gray-500 space-y-2">
+          <li>Email: <a href="mailto:contato@infinity.studio" class="text-purple-600">contato@infinity.studio</a></li>
+          <li>Telefone: <a href="tel:+5511999999999" class="text-purple-600">(11) 99999-9999</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <form class="space-y-3">
+          <input class="w-full p-3 border rounded-lg" placeholder="Nome">
+          <input class="w-full p-3 border rounded-lg" placeholder="Email">
+          <textarea class="w-full p-3 border rounded-lg" rows="4" placeholder="Descreva seu projeto"></textarea>
+          <div class="flex gap-3">
+            <button type="button" class="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold">Enviar</button>
+            <button type="reset" class="px-4 py-2 rounded-lg border">Limpar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="mt-6 text-center text-xs text-gray-400">© 2025 Infinity Studio • Todos os direitos reservados</div>
+  </footer>
+
+</body>
+</html>
