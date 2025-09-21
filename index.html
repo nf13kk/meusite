@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Infinity Studio</title>
+  <meta name="description" content="Infinity Studio — estúdio criativo" />
+  <style>
+    :root{
+      --purple: #5B2C6F; /* roxo escuro */
+      --magenta: #FF00A8; /* magenta brilhante */
+      --black: #0b0b0b;
+      --white: #ffffff;
+      --glass: rgba(255,255,255,0.06);
+      --radius: 14px;
+      --max-width: 1100px;
+      --shadow: 0 8px 30px rgba(11,11,11,0.45);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,var(--black) 0%, #0f0f13 50%);
+      color:var(--white);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+    }
+
+    .container{max-width:var(--max-width);margin:0 auto;padding:28px}
+
+    /* NAV */
+    header{padding:18px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+    .logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--magenta),var(--purple));box-shadow:0 6px 20px rgba(255,0,168,0.12);display:flex;align-items:center;justify-content:center;font-size:20px}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{color:rgba(255,255,255,0.9);text-decoration:none;font-weight:600}
+    .cta{background:linear-gradient(90deg,var(--magenta),var(--purple));padding:10px 16px;border-radius:10px;color:var(--white);text-decoration:none;font-weight:700}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:48px 0}
+    .hero-left h1{font-size:44px;margin:0 0 12px}
+    .hero-left p{margin:0 0 20px;color:rgba(255,255,255,0.8)}
+    .features{display:flex;gap:12px}
+    .chip{background:var(--glass);padding:8px 12px;border-radius:999px;font-weight:600;border:1px solid rgba(255,255,255,0.04)}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);}
+    .studio-preview{height:300px;border-radius:12px;background:linear-gradient(135deg,var(--purple),var(--magenta));display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:800;font-size:22px}
+
+    /* SERVICES */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:36px 0}
+    .service{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03)}
+    .service h3{margin:0 0 8px}
+
+    /* GALLERY */
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:28px 0}
+    .gitem{height:120px;border-radius:10px;overflow:hidden;background-size:cover;background-position:center}
+
+    /* CONTACT */
+    .contact{display:flex;gap:20px;align-items:center;margin:28px 0}
+    .contact form{flex:1;display:flex;flex-direction:column;gap:12px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:12px;border-radius:8px;color:var(--white)}
+    button{background:var(--magenta);border:none;padding:12px 16px;border-radius:10px;color:var(--white);font-weight:700}
+
+    footer{padding:30px 0;color:rgba(255,255,255,0.6);font-size:14px}
+
+    /* RESPONSIVE */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .studio-preview{height:220px}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      nav ul{display:none}
+    }
+
+    @media (max-width:480px){
+      .brand{gap:8px}
+      .hero-left h1{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="nav">
+        <div class="brand">
+          <div class="logo">∞</div>
+          <div>
+            <div style="font-size:18px">Infinity Studio</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.6)">Design • Motion • Fotografia</div>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#portifolio">Portfólio</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+        <a class="cta" href="#contato">Vamos conversar</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <div class="chip">Estúdio Criativo</div>
+          <h1>Transformamos ideias em experiências visuais</h1>
+          <p>Infinity Studio — soluções em design, motion graphics e fotografia para marcas que querem impressionar.</p>
+          <div class="features">
+            <div class="chip">Branding</div>
+            <div class="chip">Motion</div>
+            <div class="chip">Foto & Vídeo</div>
+          </div>
+        </div>
+        <aside class="card">
+          <div class="studio-preview">Preview do projeto — cores: roxo / magenta / preto / branco</div>
+          <div style="display:flex;justify-content:space-between;margin-top:12px;align-items:center">
+            <div style="font-weight:700">Projetos recentes</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.7)">Atualizado</div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="servicos">
+        <h2 style="margin:0 0 12px">O que fazemos</h2>
+        <div class="services">
+          <div class="service card">
+            <h3>Branding</h3>
+            <p>Identidade visual, naming e guidelines para marcar presença no mercado.</p>
+          </div>
+          <div class="service card">
+            <h3>Motion Design</h3>
+            <p>Animações e vídeos institucionais com narrativa visual forte.</p>
+          </div>
+          <div class="service card">
+            <h3>Fotografia</h3>
+            <p>Produção fotográfica para campanhas, produto e conteúdo para redes.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="portifolio">
+        <h2 style="margin:18px 0">Portfólio</h2>
+        <div class="gallery">
+          <div class="gitem" style="background-image:linear-gradient(135deg, rgba(91,44,111,0.45), rgba(255,0,168,0.25)), url('https://images.unsplash.com/photo-1517817748496-7d87f9b5b6b8?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
+          <div class="gitem" style="background-image:linear-gradient(135deg, rgba(255,0,168,0.18), rgba(91,44,111,0.22)), url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
+          <div class="gitem" style="background-image:linear-gradient(135deg, rgba(91,44,111,0.35), rgba(255,0,168,0.18)), url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
+          <div class="gitem" style="background-image:linear-gradient(135deg, rgba(255,0,168,0.18), rgba(91,44,111,0.22)), url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
+        </div>
+      </section>
+
+      <section id="contato" class="contact">
+        <div class="card" style="flex:1">
+          <h3>Fale com a gente</h3>
+          <p style="color:rgba(255,255,255,0.75)">Preencha os dados e entraremos em contato.</p>
+          <form onsubmit="submitForm(event)">
+            <input type="text" name="nome" placeholder="Seu nome" required />
+            <input type="email" name="email" placeholder="Seu email" required />
+            <textarea name="mensagem" placeholder="Mensagem" rows="4" required></textarea>
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+        <div style="width:320px" class="card">
+          <h4>Contato</h4>
+          <p style="margin:6px 0 0">Email: contato@infinitystudio.com</p>
+          <p style="margin:6px 0 0">Telefone: +55 11 99999-9999</p>
+          <div style="margin-top:12px">
+            <div style="font-weight:700;margin-bottom:8px">Endereço (exemplo)</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.7)">R. Exemplo, 123 — São Paulo, SP</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>© <strong>Infinity Studio</strong> — Todos os direitos reservados</div>
+        <div style="display:flex;gap:12px;align-items:center">
+          <a href="#" style="color:rgba(255,255,255,0.7);text-decoration:none">Política de privacidade</a>
+          <a href="#" style="color:rgba(255,255,255,0.7);text-decoration:none">Instagram</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function submitForm(e){
+      e.preventDefault();
+      const form = e.target;
+      // Simulação de envio — substitua pela sua API ou serviço de e-mail
+      alert('Obrigado, ' + (form.nome.value || '') + '! Sua mensagem foi enviada.');
+      form.reset();
+    }
+  </script>
+</body>
+</html>
