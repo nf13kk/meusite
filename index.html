@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,66 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Infinity Studio</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="nav">
-        <div class="brand"><strong>∞ Infinity Studio</strong></div>
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="portfolio.html">Portfólio</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-        <a class="cta" href="https://wa.me/5511999999999" target="_blank">Contratar</a>
-      </div>
-    </header>
+  <header>
+    <div class="logo">∞ Infinity Studio</div>
+    <nav>
+      <a href="#home">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#" id="openPortfolio">Portfólio</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="btn">Vamos conversar</button>
+  </header>
 
-    <section class="hero">
-      <div>
-        <h1>Identidade visual que conecta sua marca com pessoas</h1>
-        <p>Criamos logos, sites e experiências digitais que aumentam a credibilidade da sua marca e convertem visitantes em clientes.</p>
-        <div class="hero-buttons">
-          <a href="https://wa.me/5511999999999" target="_blank" class="cta">Contratar</a>
-          <a href="portfolio.html" class="cta">Ver portfólio</a>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Preview do projeto</h3>
-        <p>Projetos modernos e criativos para sua marca.</p>
-      </div>
-    </section>
+  <section class="hero" id="home">
+    <h1>Bem-vindo ao <span>Infinity Studio</span></h1>
+    <p>Design • Motion • Fotografia</p>
+    <button class="btn">Contratar</button>
+  </section>
 
-    <section id="servicos">
-      <h2>O que fazemos</h2>
-      <div class="services">
-        <div class="card service">
-          <h3>Identidade Visual</h3>
-          <p>Logo, paleta de cores, tipografia e guia de aplicação.</p>
-        </div>
-        <div class="card service">
-          <h3>Websites</h3>
-          <p>Landing pages e sites institucionais que convertem.</p>
-        </div>
-        <div class="card service">
-          <h3>Conteúdo para Redes</h3>
-          <p>Posts, capas e templates fáceis de editar.</p>
-        </div>
-      </div>
-    </section>
+  <section class="servicos" id="servicos">
+    <h2>Serviços</h2>
+    <p>Aqui você descreve seus serviços com estilo.</p>
+  </section>
 
-    <section id="contato" style="margin-top:50px;">
-      <div class="card">
-        <h3>Fale com a gente</h3>
-        <p>Email: contato@infinitystudio.com</p>
-        <p>WhatsApp: +55 11 99999-9999</p>
-      </div>
-    </section>
+  <section class="contato" id="contato">
+    <h2>Contato</h2>
+    <p>Coloque aqui suas informações de contato.</p>
+  </section>
 
-    <footer>
-      © 2025 Infinity Studio - Todos os direitos reservados.
-    </footer>
+  <footer>
+    © 2025 Infinity Studio - Todos os direitos reservados.
+  </footer>
+
+  <!-- Modal Portfólio -->
+  <div class="portfolio-modal" id="portfolioModal">
+    <div class="portfolio-content">
+      <button id="closePortfolio" class="close-btn">✕ Fechar</button>
+      <h2>Portfólio</h2>
+      <div class="grid">
+        <div class="card">Projeto 1</div>
+        <div class="card">Projeto 2</div>
+        <div class="card">Projeto 3</div>
+        <div class="card">Projeto 4</div>
+      </div>
+    </div>
   </div>
+
+  <script>
+    const openBtn = document.getElementById("openPortfolio");
+    const modal = document.getElementById("portfolioModal");
+    const closeBtn = document.getElementById("closePortfolio");
+
+    openBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.classList.remove("active");
+    });
+  </script>
 </body>
 </html>
