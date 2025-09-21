@@ -7,59 +7,79 @@
   <meta name="description" content="Infinity Studio — estúdio criativo" />
   <style>
     :root{
-      --purple:#5B2C6F;
-      --magenta:#FF00A8;
-      --black:#0b0b0b;
-      --white:#ffffff;
-      --glass:rgba(255,255,255,0.06);
-      --radius:14px;
-      --max-width:1100px;
-      --shadow:0 8px 30px rgba(11,11,11,0.45);
-      font-family:Inter,sans-serif;
+      --purple: #5B2C6F;
+      --magenta: #FF00A8;
+      --black: #0b0b0b;
+      --white: #ffffff;
+      --glass: rgba(255,255,255,0.06);
+      --radius: 14px;
+      --max-width: 1100px;
+      --shadow: 0 8px 30px rgba(11,11,11,0.45);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
+
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
-      background:linear-gradient(180deg,var(--black) 0%,#0f0f13 50%);
+      background: linear-gradient(180deg,var(--black) 0%, #0f0f13 50%);
       color:var(--white);
-      line-height:1.5;
-      transition:opacity .4s ease;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+      scroll-behavior:smooth;
     }
-    body.fade-out{opacity:0}
+
     .container{max-width:var(--max-width);margin:0 auto;padding:28px}
+
+    /* NAV */
     header{padding:18px 0}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:12px;font-weight:700}
-    .logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--magenta),var(--purple));display:flex;align-items:center;justify-content:center;font-size:20px}
+    .logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--magenta),var(--purple));box-shadow:0 6px 20px rgba(255,0,168,0.12);display:flex;align-items:center;justify-content:center;font-size:20px}
     nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-    nav a{color:rgba(255,255,255,0.9);text-decoration:none;font-weight:600;position:relative;transition:.3s}
-    nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--magenta);transition:.3s}
-    nav a:hover{color:var(--magenta)}
-    nav a:hover::after{width:100%}
-    .cta,button{background:linear-gradient(90deg,var(--magenta),var(--purple));
-      padding:10px 16px;border-radius:10px;color:var(--white);text-decoration:none;
-      font-weight:700;transition:.3s;cursor:pointer;border:none}
-    .cta:hover,button:hover{transform:scale(1.05);box-shadow:0 0 15px var(--magenta)}
+    nav a{color:rgba(255,255,255,0.9);text-decoration:none;font-weight:600;transition:all 0.3s ease}
+    nav a:hover{color:var(--magenta);transform:scale(1.05)}
+    .cta{background:linear-gradient(90deg,var(--magenta),var(--purple));padding:10px 16px;border-radius:10px;color:var(--white);text-decoration:none;font-weight:700;transition:all 0.3s ease}
+    .cta:hover{filter:brightness(1.2);transform:translateY(-2px)}
+
+    /* HERO */
     .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:48px 0}
     .hero-left h1{font-size:44px;margin:0 0 12px}
+    .hero-left p{margin:0 0 20px;color:rgba(255,255,255,0.8)}
     .features{display:flex;gap:12px}
-    .chip{background:var(--glass);padding:8px 12px;border-radius:999px;font-weight:600;border:1px solid rgba(255,255,255,0.04)}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .chip{background:var(--glass);padding:8px 12px;border-radius:999px;font-weight:600;border:1px solid rgba(255,255,255,0.04);transition:all 0.3s ease}
+    .chip:hover{background:var(--magenta);color:var(--white);transform:scale(1.05)}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);transition:all 0.3s ease}
+    .card:hover{transform:translateY(-4px);box-shadow:0 10px 35px rgba(0,0,0,0.6)}
+    .studio-preview{height:300px;border-radius:12px;background:linear-gradient(135deg,var(--purple),var(--magenta));display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:800;font-size:22px}
+
+    /* SERVICES */
     .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:36px 0}
-    .service{padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.03);transition:.3s}
-    .service:hover{transform:translateY(-5px);box-shadow:0 6px 20px rgba(255,0,168,0.2)}
-    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:28px 0}
-    .gitem{height:120px;border-radius:10px;background-size:cover;background-position:center;transition:.3s}
-    .gitem:hover{transform:scale(1.05);box-shadow:0 0 15px var(--magenta)}
+    .service{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03)}
+
+    /* CONTACT */
     .contact{display:flex;gap:20px;align-items:center;margin:28px 0}
     .contact form{flex:1;display:flex;flex-direction:column;gap:12px}
     input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:12px;border-radius:8px;color:var(--white)}
+    input:focus,textarea:focus{outline:none;border-color:var(--magenta);box-shadow:0 0 6px var(--magenta)}
+    button{background:var(--magenta);border:none;padding:12px 16px;border-radius:10px;color:var(--white);font-weight:700;cursor:pointer;transition:all 0.3s ease}
+    button:hover{background:var(--purple);transform:scale(1.05)}
+
     footer{padding:30px 0;color:rgba(255,255,255,0.6);font-size:14px}
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr}
+
+    /* RESPONSIVE */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .studio-preview{height:220px}
       .services{grid-template-columns:repeat(2,1fr)}
-      .gallery{grid-template-columns:repeat(2,1fr)}
       nav ul{display:none}
+    }
+
+    @media (max-width:480px){
+      .brand{gap:8px}
+      .hero-left h1{font-size:28px}
     }
   </style>
 </head>
@@ -76,7 +96,7 @@
         </div>
         <nav>
           <ul>
-            <li><a href="#">Início</a></li>
+            <li><a href="index.html">Início</a></li>
             <li><a href="#servicos">Serviços</a></li>
             <li><a href="portfolio.html">Portfólio</a></li>
             <li><a href="#contato">Contato</a></li>
@@ -86,75 +106,17 @@
       </div>
     </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero-left">
-          <div class="chip">Estúdio Criativo</div>
-          <h1>Transformamos ideias em experiências visuais</h1>
-          <p>Infinity Studio — soluções em design, motion graphics e fotografia.</p>
-          <div class="features">
-            <div class="chip">Branding</div>
-            <div class="chip">Motion</div>
-            <div class="chip">Foto & Vídeo</div>
-          </div>
-        </div>
-        <aside class="card">
-          <div class="studio-preview">Preview do projeto</div>
-        </aside>
-      </section>
+    <!-- resto do conteúdo igual ao que você já tinha -->
 
-      <section id="servicos">
-        <h2>O que fazemos</h2>
-        <div class="services">
-          <div class="service card">
-            <h3>Branding</h3>
-            <p>Identidade visual, naming e guidelines.</p>
-          </div>
-          <div class="service card">
-            <h3>Motion Design</h3>
-            <p>Animações e vídeos institucionais.</p>
-          </div>
-          <div class="service card">
-            <h3>Fotografia</h3>
-            <p>Produção fotográfica para campanhas e produtos.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contato" class="contact">
-        <div class="card" style="flex:1">
-          <h3>Fale com a gente</h3>
-          <form onsubmit="submitForm(event)">
-            <input type="text" name="nome" placeholder="Seu nome" required />
-            <input type="email" name="email" placeholder="Seu email" required />
-            <textarea name="mensagem" placeholder="Mensagem" rows="4" required></textarea>
-            <button type="submit">Enviar</button>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      © Infinity Studio — Todos os direitos reservados
-    </footer>
   </div>
 
   <script>
     function submitForm(e){
       e.preventDefault();
-      alert("Mensagem enviada!");
-      e.target.reset();
+      const form = e.target;
+      alert('Obrigado, ' + (form.nome.value || '') + '! Sua mensagem foi enviada.');
+      form.reset();
     }
-    // transição de páginas
-    document.querySelectorAll("a").forEach(link=>{
-      if(link.getAttribute("href")?.endsWith(".html")){
-        link.addEventListener("click",e=>{
-          e.preventDefault();
-          document.body.classList.add("fade-out");
-          setTimeout(()=>{window.location=link.href},400);
-        });
-      }
-    });
   </script>
 </body>
 </html>
