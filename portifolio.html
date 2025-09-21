@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio - Infinity Studio</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <style>
+    :root{
+      --purple:#5B2C6F;--magenta:#FF00A8;--black:#0b0b0b;--white:#fff;
+      font-family:Inter,sans-serif;
+    }
+    body{margin:0;background:linear-gradient(180deg,var(--black),#111);
+      color:var(--white);transition:opacity .4s ease;}
+    body.fade-out{opacity:0}
+    header,footer{padding:20px}
+    .nav{display:flex;justify-content:space-between;align-items:center}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{color:rgba(255,255,255,.9);text-decoration:none;font-weight:600;transition:.3s}
+    nav a:hover{color:var(--magenta)}
+    .cta{background:linear-gradient(90deg,var(--magenta),var(--purple));padding:10px 16px;border-radius:8px;color:#fff;text-decoration:none;font-weight:700;transition:.3s}
+    .cta:hover{transform:scale(1.05);box-shadow:0 0 15px var(--magenta)}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;padding:40px 20px}
+    .gitem{height:180px;border-radius:10px;background-size:cover;background-position:center;overflow:hidden}
+    h1{text-align:center;padding:40px 20px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div><strong>∞ Infinity Studio</strong></div>
+      <nav>
+        <ul>
+          <li><a href="index.html#servicos">Serviços</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="index.html#contato">Vamos conversar</a>
+    </div>
+  </header>
+
+  <main>
+    <h1>Nosso Portfólio</h1>
+    <div class="gallery">
+      <div class="gitem" data-aos="fade-up" style="background-image:url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=800');"></div>
+      <div class="gitem" data-aos="zoom-in" style="background-image:url('https://images.unsplash.com/photo-1517817748496-7d87f9b5b6b8?w=800');"></div>
+      <div class="gitem" data-aos="fade-up" style="background-image:url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=800');"></div>
+      <div class="gitem" data-aos="zoom-in" style="background-image:url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=800');"></div>
+    </div>
+  </main>
+
+  <footer>
+    © Infinity Studio — Todos os direitos reservados
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    document.querySelectorAll("a").forEach(link=>{
+      if(link.getAttribute("href") && link.getAttribute("href").endsWith(".html")){
+        link.addEventListener("click",e=>{
+          e.preventDefault();
+          document.body.classList.add("fade-out");
+          setTimeout(()=>{window.location=link.href},400);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
