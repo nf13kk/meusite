@@ -4,80 +4,150 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Infinity Studio</title>
+  <meta name="description" content="Infinity Studio — estúdio criativo" />
   <style>
     :root{
-      --purple: #5B2C6F;
-      --magenta: #FF00A8;
-      --black: #0b0b0b;
-      --white: #ffffff;
-      font-family: Inter, sans-serif;
+      --purple:#5B2C6F;
+      --magenta:#FF00A8;
+      --black:#0b0b0b;
+      --white:#ffffff;
+      --glass:rgba(255,255,255,0.06);
+      --radius:14px;
+      --max-width:1100px;
+      --shadow:0 8px 30px rgba(11,11,11,0.45);
+      font-family:Inter,sans-serif;
     }
+    *{box-sizing:border-box}
     body{
-      margin:0;background:linear-gradient(180deg,var(--black),#111);
-      color:var(--white);line-height:1.4;transition:opacity .4s ease;
+      margin:0;
+      background:linear-gradient(180deg,var(--black) 0%,#0f0f13 50%);
+      color:var(--white);
+      line-height:1.5;
+      transition:opacity .4s ease;
     }
     body.fade-out{opacity:0}
-    header,footer{padding:20px}
-    .nav{display:flex;justify-content:space-between;align-items:center}
+    .container{max-width:var(--max-width);margin:0 auto;padding:28px}
+    header{padding:18px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+    .logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--magenta),var(--purple));display:flex;align-items:center;justify-content:center;font-size:20px}
     nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-    nav a{color:rgba(255,255,255,.9);text-decoration:none;font-weight:600;transition:.3s}
+    nav a{color:rgba(255,255,255,0.9);text-decoration:none;font-weight:600;position:relative;transition:.3s}
+    nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--magenta);transition:.3s}
     nav a:hover{color:var(--magenta)}
-    .cta{background:linear-gradient(90deg,var(--magenta),var(--purple));padding:10px 16px;border-radius:8px;color:#fff;text-decoration:none;font-weight:700;transition:.3s}
-    .cta:hover{transform:scale(1.05);box-shadow:0 0 15px var(--magenta)}
-    .hero{padding:60px 20px;text-align:center}
-    .hero h1{font-size:40px;margin-bottom:16px}
-    html{scroll-behavior:smooth}
+    nav a:hover::after{width:100%}
+    .cta,button{background:linear-gradient(90deg,var(--magenta),var(--purple));
+      padding:10px 16px;border-radius:10px;color:var(--white);text-decoration:none;
+      font-weight:700;transition:.3s;cursor:pointer;border:none}
+    .cta:hover,button:hover{transform:scale(1.05);box-shadow:0 0 15px var(--magenta)}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:48px 0}
+    .hero-left h1{font-size:44px;margin:0 0 12px}
+    .features{display:flex;gap:12px}
+    .chip{background:var(--glass);padding:8px 12px;border-radius:999px;font-weight:600;border:1px solid rgba(255,255,255,0.04)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:36px 0}
+    .service{padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.03);transition:.3s}
+    .service:hover{transform:translateY(-5px);box-shadow:0 6px 20px rgba(255,0,168,0.2)}
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:28px 0}
+    .gitem{height:120px;border-radius:10px;background-size:cover;background-position:center;transition:.3s}
+    .gitem:hover{transform:scale(1.05);box-shadow:0 0 15px var(--magenta)}
+    .contact{display:flex;gap:20px;align-items:center;margin:28px 0}
+    .contact form{flex:1;display:flex;flex-direction:column;gap:12px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:12px;border-radius:8px;color:var(--white)}
+    footer{padding:30px 0;color:rgba(255,255,255,0.6);font-size:14px}
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      nav ul{display:none}
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="nav">
-      <div><strong>∞ Infinity Studio</strong></div>
-      <nav>
-        <ul>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="portfolio.html">Portfólio</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
-      <a class="cta" href="#contato">Vamos conversar</a>
-    </div>
-  </header>
+  <div class="container">
+    <header>
+      <div class="nav">
+        <div class="brand">
+          <div class="logo">∞</div>
+          <div>
+            <div style="font-size:18px">Infinity Studio</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.6)">Design • Motion • Fotografia</div>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="portfolio.html">Portfólio</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+        <a class="cta" href="#contato">Vamos conversar</a>
+      </div>
+    </header>
 
-  <main>
-    <section class="hero">
-      <h1>Transformamos ideias em experiências visuais</h1>
-      <p>Design • Motion • Fotografia</p>
-    </section>
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <div class="chip">Estúdio Criativo</div>
+          <h1>Transformamos ideias em experiências visuais</h1>
+          <p>Infinity Studio — soluções em design, motion graphics e fotografia.</p>
+          <div class="features">
+            <div class="chip">Branding</div>
+            <div class="chip">Motion</div>
+            <div class="chip">Foto & Vídeo</div>
+          </div>
+        </div>
+        <aside class="card">
+          <div class="studio-preview">Preview do projeto</div>
+        </aside>
+      </section>
 
-    <section id="servicos" style="padding:40px 20px">
-      <h2>O que fazemos</h2>
-      <ul>
-        <li>Branding</li>
-        <li>Motion Design</li>
-        <li>Fotografia</li>
-      </ul>
-    </section>
+      <section id="servicos">
+        <h2>O que fazemos</h2>
+        <div class="services">
+          <div class="service card">
+            <h3>Branding</h3>
+            <p>Identidade visual, naming e guidelines.</p>
+          </div>
+          <div class="service card">
+            <h3>Motion Design</h3>
+            <p>Animações e vídeos institucionais.</p>
+          </div>
+          <div class="service card">
+            <h3>Fotografia</h3>
+            <p>Produção fotográfica para campanhas e produtos.</p>
+          </div>
+        </div>
+      </section>
 
-    <section id="contato" style="padding:40px 20px">
-      <h2>Contato</h2>
-      <form onsubmit="submitForm(event)">
-        <input type="text" name="nome" placeholder="Seu nome" required><br>
-        <input type="email" name="email" placeholder="Seu email" required><br>
-        <textarea name="mensagem" placeholder="Mensagem" rows="4" required></textarea><br>
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-  </main>
+      <section id="contato" class="contact">
+        <div class="card" style="flex:1">
+          <h3>Fale com a gente</h3>
+          <form onsubmit="submitForm(event)">
+            <input type="text" name="nome" placeholder="Seu nome" required />
+            <input type="email" name="email" placeholder="Seu email" required />
+            <textarea name="mensagem" placeholder="Mensagem" rows="4" required></textarea>
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </section>
+    </main>
 
-  <footer>
-    © Infinity Studio — Todos os direitos reservados
-  </footer>
+    <footer>
+      © Infinity Studio — Todos os direitos reservados
+    </footer>
+  </div>
 
   <script>
-    // efeito de transição entre páginas
+    function submitForm(e){
+      e.preventDefault();
+      alert("Mensagem enviada!");
+      e.target.reset();
+    }
+    // transição de páginas
     document.querySelectorAll("a").forEach(link=>{
-      if(link.getAttribute("href") && link.getAttribute("href").endsWith(".html")){
+      if(link.getAttribute("href")?.endsWith(".html")){
         link.addEventListener("click",e=>{
           e.preventDefault();
           document.body.classList.add("fade-out");
@@ -85,11 +155,6 @@
         });
       }
     });
-    function submitForm(e){
-      e.preventDefault();
-      alert("Mensagem enviada com sucesso!");
-      e.target.reset();
-    }
   </script>
 </body>
 </html>
